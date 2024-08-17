@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Attendance</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Daily Attendance</h2>
+        <ul class="list-group">
+            {% for attendee in attendees %}
+                <li class="list-group-item">
+                    Membership Number: {{ attendee.member.membership_number }}<br>
+                    Name: {{ attendee.member.name }}<br>
+                    Time: {{ attendee.time }}
+                </li>
+            {% empty %}
+                <li class="list-group-item">No attendees today.</li>
+            {% endfor %}
+        </ul>
+        <a href="{% url 'clear_daily_attendance' %}" class="btn btn-danger mt-3">Remove Customer Specific Attendance</a>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clear Daily Attendance</title>
+</head>
+<body>
+    <h1>Clear Daily Attendance</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="membership_number">Membership Number:</label>
+        <input type="text" id="membership_number" name="membership_number" required><br><br>
+        
+        <label for="date">Date (YYYY-MM-DD):</label>
+        <input type="text" id="date" name="date" required><br><br>
+        
+        <input type="submit" value="Clear Attendance">
+    </form>
+    
+    {% if message %}
+        <p>{{ message }}</p>
+    {% elif error %}
+        <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>

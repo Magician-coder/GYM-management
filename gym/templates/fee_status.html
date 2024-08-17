@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fee Status</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h2 class="mt-5">Check Fee Status</h2>
+        <form method="post" action="{% url 'fee_status' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="membership_number">Membership Number:</label>
+                <input type="text" id="membership_number" name="membership_number" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Check Status</button>
+        </form>
+        {% if fee_status %}
+            <div class="mt-4">
+                <h3>Fee Status:</h3>
+                <p>{{ fee_status|safe }}</p>
+            </div>
+        {% endif %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

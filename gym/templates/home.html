@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Welcome to the Gym Management System</h1>
+        <ul>
+            <li><a href="{% url 'add_customer' %}">Add New Customer</a></li>
+            <li><a href="{% url 'mark_attendance' %}">Mark Attendance</a></li>
+            <li><a href="{% url 'fee_status' %}">Check Fee Status</a></li>
+            <li><a href="{% url 'daily_attendance' %}">Daily Attendance</a></li>
+            <li><a href="{% url 'remove_customer' %}">Remove Customer</a></li>
+            <li><a href="{% url 'pay_fees_later' %}">Pay Fees </a></li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
